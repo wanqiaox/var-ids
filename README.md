@@ -37,3 +37,17 @@ f(1) &= \frac{A_1^2}{C_1}\\
 f(\alpha_0) &= \frac{4(A_1-A_2)(A_2C_1-A_1C_2)}{(C_1-C_2)^2}
 \end{align*}
 $$
+
+## For the case of pessimism
+We have objective
+$$
+\begin{equation}
+f(\alpha) = \frac{\mathbb{E}[\alpha A_1 + (1-\alpha)A_2]^2 + \epsilon}{\alpha C_1 + (1-\alpha) C_2}.
+\end{equation}
+$$
+
+The derivative has roots
+$$
+\alpha = \dfrac{\left(A_2-A_1\right)C_2}{\left(A_2-A_1\right)C_2+\left(A_1-A_2\right)C_1} \pm \dfrac{\sqrt{\left((C_2 - C_1)^2\right){\epsilon}+(A_1C_2-A_2C_1)^2}{\left(A_2-A_1\right)C_2+\left(A_1-A_2\right)C_1}
+$$
+which gives
