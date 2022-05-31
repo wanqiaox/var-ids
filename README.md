@@ -48,6 +48,16 @@ $$
 
 The derivative has roots
 $$
-\alpha = \dfrac{\left(A_2-A_1\right)C_2}{\left(A_2-A_1\right)C_2+\left(A_1-A_2\right)C_1} \pm \dfrac{\sqrt{\left((C_2 - C_1)^2\right){\epsilon}+(A_1C_2-A_2C_1)^2}{\left(A_2-A_1\right)C_2+\left(A_1-A_2\right)C_1}
+\alpha = \dfrac{\left(A_2-A_1\right)C_2}{\left(A_1-A_2\right)\left(C_1-C_2\right)} \pm \dfrac{\sqrt{\left(C_2 - C_1\right)^2\epsilon+(A_1C_2-A_2C_1)^2}}{\left(A_1-A_2\right)\left(C_1-C_2\right)}
 $$
 which gives
+$$
+f(\alpha) = \dfrac{\left(A_2C_1-A_1C_2\pm\sqrt{\left(C_2 - C_1\right)^2\epsilon+(A_1C_2-A_2C_1)^2}\right)^2/(C_1-C_2)^2+\epsilon}{\pm\sqrt{\left(C_2 - C_1\right)^2\epsilon+(A_1C_2-A_2C_1)^2}/(A_1-A_2)}
+$$
+Also 
+$$
+\begin{align*}
+f(0) &= \frac{A^2_2+\epsilon}{C_2}\\
+f(1) &= \frac{A_1^2+\epsilon}{C_1}
+\end{align*}
+$$
