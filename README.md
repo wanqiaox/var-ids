@@ -42,7 +42,7 @@ $$
 We have objective
 $$
 \begin{equation}
-f(\alpha) = \frac{\mathbb{E}[\alpha A_1 + (1-\alpha)A_2]^2 + \epsilon}{\alpha C_1 + (1-\alpha) C_2}.
+f(\alpha) = \frac{\left(\alpha A_1 + (1-\alpha)A_2\right)^2 + \epsilon}{\alpha C_1 + (1-\alpha) C_2}.
 \end{equation}
 $$
 
@@ -59,5 +59,45 @@ $$
 \begin{align*}
 f(0) &= \frac{A^2_2+\epsilon}{C_2}\\
 f(1) &= \frac{A_1^2+\epsilon}{C_1}
+\end{align*}
+$$
+
+## Alternative approach
+We propose several modifications of the variance-IDS agent. The first one is var-ids-exp, implemented by taking the exponential of the numerator of the information ratio. The objective becomes
+$$
+\begin{equation*}
+f(\alpha)=\frac{\alpha \mathrm{e}^{A_1} + (1-\alpha)\mathrm{e}^{A_2}}{\alpha C_1+(1-\alpha)C_2}
+\end{equation*}
+$$
+
+The derivative
+$$
+f'(\alpha)=\dfrac{\mathrm{e}^{A_1}C_2-\mathrm{e}^{A_2}C_1}{\left(\left(C_2-C_1\right){\alpha}-C_2\right)^2}
+$$
+is either always positive or always negative. Thus it suffices to consider deterministic actions.
+
+$$
+\begin{align*}
+f(0) &= \frac{\mathrm{e}^{A_2}}{C_2}\\
+f(1) &= \frac{\mathrm{e}^{A_1}}{C_1}
+\end{align*}
+$$
+
+The second modification is var-ids-outside-exp, implemented by taking the exponential of the expected shortfall. The objective becomes
+$$
+f(\alpha)=\frac{e^{\alpha A_1+(1-\alpha)A_2}}{\alpha C_1+(1-\alpha)C_2}
+$$
+
+The derivative has a root
+$$
+\alpha = \dfrac{\left(A_2-A_1-1\right)C_2+C_1}{\left(A_2-A_1\right)C_2+\left(A_1-A_2\right)C_1}
+$$
+
+In this case, we only need to compare
+$$
+\begin{align*}
+f(0) &= \frac{\mathrm{e}^{A_2}}{C_2}\\
+f(1) &= \frac{\mathrm{e}^{A_1}}{C_1}\\
+f(\alpha) &= f\left(\dfrac{\left(A_2-A_1-1\right)C_2+C_1}{\left(A_2-A_1\right)C_2+\left(A_1-A_2\right)C_1}\right)
 \end{align*}
 $$
